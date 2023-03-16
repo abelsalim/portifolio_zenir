@@ -1,0 +1,87 @@
+site_name: Portifólio Zenir - Abel Salim
+site_url: https://abelsalim.github.io/portifolio_zenir/
+site_author: Abel Salim
+site_description: >-
+  Portifólio com objetivo de armazenar minhas contribuições em prol da inserção no grupo DEV
+
+
+repo_name: abelsalim/portifolio_zenir
+repo_url: https://github.com/abelsalim/portifolio_zenir
+
+
+copyright: Copyright &copy; 2023 - 2023 Abel Salim
+
+
+theme:
+  logo: img/logo.png 
+  name: material
+  features:
+    - navigation.tabs          # Habilitando Seções de nível superior
+    - navigation.sections      # Habilita a hierarquia na barra lateral
+    - navigation.top           # Insere o botão 'Voltar ao Topo'
+    - navigation.expand        # Habilita a expanção as subseções da barra lateral
+    - navigation.tracking      # Atualização de url ao navegar nos índices
+
+    - search.suggest           # Sugestão de pesquisa
+    - search.highlight         # Destaque na pesquisa
+
+    - header.autohide          # Ocultar cabeçalho de forma automática
+
+    - navigation.footer        # Habilita edição do rodapé
+
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-7
+        name: Switch to system preference
+
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/abelsalim
+
+    - icon: fontawesome/brands/medium
+      link: https://medium.com/@abel_salim
+
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/abel-salim-c-8b0610137/
+
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:<abelsalim@proton.me>
+
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+
+
+
+
+
+nav:
+  - HOME: index.md
+  - TESTE:  
+    - Teste 111: index.md
+    - Teste 123:
+      - Teste 1234: index.md
+      - Teste 1234: index.md
+      - Teste 1234: index.md
+
+markdown_extensions:
+  - pymdownx.tasklist    # Suporte a tarefas
+  - pymdownx.emoji       # Suporte a emojis
+  - pymdownx.mark        # Suporte a marcações
+  - pymdownx.tilde       # Suporte a tachado
+  - pymdownx.highlight   # Suporte a código
+  - pymdownx.superfences # Suporte a tipagem
