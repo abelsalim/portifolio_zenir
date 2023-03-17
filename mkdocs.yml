@@ -1,3 +1,4 @@
+# Informações do site
 site_name: Portifólio Zenir - Abel Salim
 site_url: https://abelsalim.github.io/portifolio_zenir/
 site_author: Abel Salim
@@ -5,32 +6,31 @@ site_description: >-
   Portifólio com objetivo de armazenar minhas contribuições em prol da inserção no grupo DEV
 
 
-repo_name: abelsalim/portifolio_zenir
-repo_url: https://github.com/abelsalim/portifolio_zenir
+repo_name: abelsalim/portifolio_zenir                         # Name repositório
+repo_url: https://github.com/abelsalim/portifolio_zenir       # Link repositório
 
 
-copyright: Copyright &copy; 2023 - 2023 Abel Salim
+copyright: Copyright &copy; 2023 - 2023 Abel Salim   # Informações de copyright
 
 
-theme:
+theme:                       # Informações de themas e customizações
   logo: img/logo.png 
   name: material
   features:
-    - navigation.tabs          # Habilitando Seções de nível superior
-    - navigation.sections      # Habilita a hierarquia na barra lateral
-    - navigation.top           # Insere o botão 'Voltar ao Topo'
-    - navigation.expand        # Habilita a expanção as subseções da barra lateral
-    - navigation.tracking      # Atualização de url ao navegar nos índices
+    - navigation.tabs        # Habilitando Seções de nível superior
+    - navigation.sections    # Habilita a hierarquia na barra lateral
+    - navigation.top         # Insere o botão 'Voltar ao Topo'
+    - navigation.expand      # Habilita a expansão as subseções da barra lateral
+    - navigation.tracking    # Atualização de url ao navegar nos índices
 
-    - search.suggest           # Sugestão de pesquisa
-    - search.highlight         # Destaque na pesquisa
+    - search.suggest         # Sugestão de pesquisa
+    - search.highlight       # Destaque na pesquisa
 
-    - header.autohide          # Ocultar cabeçalho de forma automática
+    - header.autohide        # Ocultar cabeçalho de forma automática
 
-    - navigation.footer        # Habilita edição do rodapé
+    - navigation.footer      # Habilita edição do rodapé
 
-
-  palette:
+  palette:                   # Informações de themas (dark/white)
     - media: "(prefers-color-scheme: light)"
       scheme: default 
       toggle:
@@ -44,39 +44,32 @@ theme:
         name: Switch to system preference
 
 
-extra:
-  generator: false
+extra:                  
+  generator: false           # Remove link do material no rodapé
   social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/abelsalim
+    - icon: fontawesome/brands/github                            # Icon Git Hub
+      link: https://github.com/abelsalim                         # Link Git Hub
 
-    - icon: fontawesome/brands/medium
-      link: https://medium.com/@abel_salim
+    - icon: fontawesome/brands/medium                            # Icon Medium
+      link: https://medium.com/@abel_salim                       # Link Medium
 
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/abel-salim-c-8b0610137/
+    - icon: fontawesome/brands/linkedin                          # Icon linkedin
+      link: https://www.linkedin.com/in/abel-salim-c-8b0610137/  # Link linkedin
 
-    - icon: fontawesome/solid/paper-plane
-      link: mailto:<abelsalim@proton.me>
+    - icon: fontawesome/solid/paper-plane                        # Icon E-mail
+      link: mailto:<abelsalim@proton.me>                         # Link E-mail
 
 
 plugins:
-  - search
+  - search                        # Habilitando a barra de pesquisa no cabeçalho
   - git-revision-date-localized:
-      enable_creation_date: true
+      enable_creation_date: true  # Inserção do time de edição no final da nota
 
-
-
-
-
-nav:
+nav:                         # Estrutura de páginas
   - HOME: index.md
-  - TESTE:  
-    - Teste 111: index.md
-    - Teste 123:
-      - Teste 1234: index.md
-      - Teste 1234: index.md
-      - Teste 1234: index.md
+  - Scripts Python:
+    - Check Comunicador: scripts_python/check_comunicador.md  
+
 
 markdown_extensions:
   - pymdownx.tasklist    # Suporte a tarefas
