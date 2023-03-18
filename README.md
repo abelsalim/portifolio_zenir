@@ -1,5 +1,4 @@
 # Olá... Bem vindo ao meu Portfólio
-___
 <div>
   <img align="left" height="290" width="300" src="docs/img/self.png" >
   <p>
@@ -11,13 +10,12 @@ ___
     como objetivo acompanhar minha caminhada 'Rumo ao DEV', onde vou estar
     compartilhando minha caminhada e aprendizado em áreas de programação python,
     contribuições em bibliotecas e outras ferramentas como banco de dados.
+    <br>
+    <br>
+    Acesse o meu portifófio pelo <a href="https://abelsalim.github.io/portifolio_zenir/">Link</a>
   </p>
   <br>
-  <br>
-  <br>
 </div>
-
-___
 
 ## Estatísticas do GitHub
 
