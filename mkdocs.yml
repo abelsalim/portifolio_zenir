@@ -93,7 +93,7 @@ nav:                         # Estrutura de páginas
     - blog/index.md
     - 2023:
       - blog/posts/funcoes_python.md
-      - blog/posts/list_comprehension
+      - blog/posts/list_comprehension.md
 
 
 markdown_extensions:
