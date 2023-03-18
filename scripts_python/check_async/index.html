@@ -12,20 +12,20 @@
         <meta name="author" content="Abel Salim">
       
       
-        <link rel="canonical" href="https://abelsalim.github.io/portifolio_zenir/scripts_python/check_comunicador/">
+        <link rel="canonical" href="https://abelsalim.github.io/portifolio_zenir/scripts_python/check_async/">
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../check_comunicador/">
       
       
-        <link rel="next" href="../check_async/">
+        <link rel="next" href="../../blog/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
-        <title>Check Comunicador - Portifólio Zenir - Abel Salim</title>
+        <title>Check Async - Portifólio Zenir - Abel Salim</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#check-comunicador" class="md-skip">
+        <a href="#check-async" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Check Comunicador
+              Check Async
             
           </span>
         </div>
@@ -223,7 +223,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../check_comunicador/" class="md-tabs__link md-tabs__link--active">
         Scripts Python
       </a>
     </li>
@@ -341,6 +341,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../check_comunicador/" class="md-nav__link">
+        Check Comunicador
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -353,12 +367,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Check Comunicador
+          Check Async
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Check Comunicador
+        Check Async
       </a>
       
         
@@ -391,8 +405,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#analise-por-trecho-de-codigo" class="md-nav__link">
-    Análise por trecho de código
+  <a href="#analise-por-trecho-de-codigo-arquivo-de-constantes" class="md-nav__link">
+    Análise por trecho de código - Arquivo de Constantes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analise-por-trecho-de-codigo-arquivo-check-async" class="md-nav__link">
+    Análise por trecho de código - Arquivo Check Async
   </a>
   
 </li>
@@ -408,20 +429,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../check_async/" class="md-nav__link">
-        Check Async
-      </a>
     </li>
   
 
@@ -593,8 +600,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#analise-por-trecho-de-codigo" class="md-nav__link">
-    Análise por trecho de código
+  <a href="#analise-por-trecho-de-codigo-arquivo-de-constantes" class="md-nav__link">
+    Análise por trecho de código - Arquivo de Constantes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analise-por-trecho-de-codigo-arquivo-check-async" class="md-nav__link">
+    Análise por trecho de código - Arquivo Check Async
   </a>
   
 </li>
@@ -624,7 +638,7 @@
   
 
 
-<h1 id="check-comunicador">Check Comunicador</h1>
+<h1 id="check-async">Check Async</h1>
 <p>Script python para checagem e verificação de atividade para o Software monitor e
 comunicador da SEFAZ</p>
 <hr />
@@ -633,54 +647,77 @@ comunicador da SEFAZ</p>
 Eletrônico) onde o mesmo ficava constantemente offline devido a queda dos
 serviços do comunicador e monitor, porém, os mesmos ficavam up com a execução
 manual via shell.</p>
-<p>O script do comunicador é responsável por estabelecer a
-comunicação do o MFE e o script monitor é responsável por retornar um status
-visual do estado do módulo, ou seja, se encontra-se conectado ou não ao
-computador.</p>
+<p>O script do comunicador é responsável por estabelecer a comunicação do o MFE e o
+script monitor é responsável por retornar um status visual do estado do módulo,
+ou seja, se encontra-se conectado ou não ao computador.</p>
 <hr />
 <h2 id="solucao">Solução</h2>
 <p>Como solução, trouxe um script em python onde o mesmo teria duas versões
 visando a falta de padronização nos sistemas linux (como ubuntu 16.04 e 18.04,
 Zorin 14.04 e 16.04).</p>
 <blockquote>
-<p>Nesse artigo trataremos do script adaptado como <strong>Solução para o python3.6</strong>.</p>
+<p>Nesse artigo trataremos do script adaptado como <strong>Solução para o python3.9+</strong>.</p>
 </blockquote>
-<p>A solução abordada foi o script <code>check_comunicador.py</code>, que basicamente utiliza
-bibliotecas como threading, subprocess e time:</p>
+<p>A solução abordada foi o script <code>check_async.py</code>, que basicamente utiliza
+bibliotecas como <code>subprocess</code>, <code>asyncio</code> e <code>psutil</code>:</p>
 <ul>
-<li>
-<p><strong>Threading:</strong> Utilizar threads possibilitou o a criação de treads para então
-  realizarmos a checagem de modo concorrente ao inserirmos na pool.</p>
-</li>
 <li>
 <p><strong>Subprocess:</strong> A biblioteca subprocess é utilizada para realizar processos
   UNIX no python (como o up dos scripts que são feitos em shell).</p>
 </li>
 <li>
-<p><strong>Time:</strong> Utilizada apenas para definir o time de rechecagem.</p>
+<p><strong>AsyncIO:</strong> É uma biblioteca utilizada para proporcionar o processamento
+assíncrono, com threads e de forma concorrente. </p>
+</li>
+<li>
+<p><strong>Psutil:</strong> Utilizada para verificar se o processo está rodando.</p>
 </li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">check_comunicador.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">check_async.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll"><span class="kn">import</span> <span class="nn">threading</span> <span class="k">as</span> <span class="nn">t</span>
-</span><span class="hll"><span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">PIPE</span>
-</span><span class="hll"><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span> 
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll"><span class="kn">import</span> <span class="nn">subprocess</span>
+</span><span class="hll"><span class="kn">from</span> <span class="nn">asyncio</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">sleep</span><span class="p">,</span> <span class="n">gather</span><span class="p">,</span> <span class="n">to_thread</span>
+</span><span class="hll"><span class="kn">from</span> <span class="nn">psutil</span> <span class="kn">import</span> <span class="n">process_iter</span>
 </span></code></pre></div></td></tr></table></div>
-<p>Essa abordagem utiliza threads para execução em paralelo visando a limitação do
-consumo de memória ao impedir a criação de processos órfãos, visto que o mesmo
-seria executado via loop a cada dez segundos.</p>
+<p>Essa abordagem utiliza uma programação assíncrona através da biblioteca asyncio
+e com seus recursos tornou mais eficaz a utilização de threads distintas sendo
+lançadas na pool de processos de forma concorrente e não sequencial.</p>
 <hr />
-<h2 id="analise-por-trecho-de-codigo">Análise por trecho de código</h2>
-<p>De início temos a função <code>check_up()</code> que como o nome sugere, verifica se o
-script está up e retorna ou não o seu PID (Número do processo UNIX), caso o
-serviço não esteja up o retorno é uma string vazia.</p>
-<p>Outro ponto é que essa função toma como parâmetro apenas o serviço <code>Comunicador</code>
-para verificação de atividade. Essa medida foi tomada pois, as distros antigas
-estão em processo de atualização, e também os erros dificilmente ocorrem com o
-serviço do monitor (Ambas as verificações são abordadas e realizadas no script
-<code>check_async.py</code>).</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">check_comunicador.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
-<span class="normal"> 9</span>
+<h2 id="analise-por-trecho-de-codigo-arquivo-de-constantes">Análise por trecho de código - Arquivo de Constantes</h2>
+<p>O arquivo de constantes é composto por duas variáveis do tipo <code>dict</code>, onde a
+chave é o nome do processo ao qual usaremos para rastrear a atividade do
+mesmo e o valor é comando de execução utilizado para iniciar o processo.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">constant.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">COMUNICADOR</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Comunicador&#39;</span><span class="p">:</span> 
+    <span class="s1">&#39;/usr/bin/nohup /opt/sefaz/cco/bin/runcco-ser.sh &gt; /dev/null 2&gt;&amp;1 &amp;&#39;</span>
+    <span class="p">}</span>
+
+<span class="n">MONITOR</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Monitor&#39;</span><span class="p">:</span>
+    <span class="s1">&#39;/usr/bin/nohup /opt/sefaz/cco/bin/runcco-mon.sh &gt; /dev/null 2&gt;&amp;1 &amp;&#39;</span>
+    <span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>A expressão <code>&gt;</code> serve para direcionar o retorno do script executado para o
+destino <code>/dev/null 2&gt;&amp;1 &amp;</code>, onde o mesmo será um destino nulo no sistema.</p>
+</blockquote>
+<hr />
+<h2 id="analise-por-trecho-de-codigo-arquivo-check-async">Análise por trecho de código - Arquivo Check Async</h2>
+<p>De início temos a função <code>up_down()</code> que como o nome sugere, verifica se o
+script está ativo ou não. Para simplificar, iremos iterar em todos os processos 
+rodando no sistema através da biblioteca <code>psutil</code> e filtrar pelo nome dos 
+processo através da seguinte expressão: <code>process_iter(['name'])</code>. Mas  antes 
+disso vamos instanciar as constantes e desempacota-las nas variáveis <code>key</code> 
+e <code>values</code> pela expressão <code>for key, value in process.items():</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">check_async.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
@@ -688,108 +725,122 @@ serviço do monitor (Ambas as verificações são abordadas e realizadas no scri
 <span class="normal">14</span>
 <span class="normal">15</span>
 <span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">check_up</span><span class="p">():</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">up_down</span><span class="p">(</span><span class="n">process</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Função simples para coletar e retornar o PID do programa Comunicador.</span>
+<span class="sd">    Função responsável por identificar se o processo em palta está em execução.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">command</span> <span class="o">=</span> <span class="n">run</span><span class="p">([</span><span class="s1">&#39;ps -C Comunicador -o pid|grep -v PID&#39;</span><span class="p">],</span>
-                  <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                  <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span>
-                  <span class="n">universal_newlines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">command</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="hll">    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">process</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span>        <span class="k">for</span> <span class="n">processo</span> <span class="ow">in</span> <span class="n">process_iter</span><span class="p">([</span><span class="s1">&#39;name&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">processo</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p>Como sequência temos a função <code>up</code> que de fato irá realizar o start dos
-programas repassados.</p>
-<p>De início temos duas constantes que irão armazenar a localização dos scripts:
-<code>COM</code> E <code>MON</code>.</p>
-<ul>
-<li><strong>COM:</strong> Variável com localização do script de start para o comunicador.</li>
-<li><strong>MON:</strong> Variável com localização do script de start para o Monitor.</li>
-</ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">check_comunicador.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll"><span class="n">COM</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/usr/bin/nohup /opt/sefaz/cco/bin/runcco-ser.sh &gt; /dev/null 2&gt;&amp;1 &amp;&#39;</span><span class="p">]</span>
-</span><span class="hll"><span class="n">MON</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/usr/bin/nohup /opt/sefaz/cco/bin/runcco-mon.sh &gt; /dev/null 2&gt;&amp;1 &amp;&#39;</span><span class="p">]</span>
+<p>Agora foi adicionado um segundo <code>for</code> para enfim podermos iterar em cada
+processo com a biblioteca <code>psutil</code>. Para isso utilizamos a seguinte expressão
+<code>for processo in process_iter(['name']):</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">check_async.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">up_down</span><span class="p">(</span><span class="n">process</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Função responsável por identificar se o processo em palta está em execução.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">process</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="hll">        <span class="k">for</span> <span class="n">processo</span> <span class="ow">in</span> <span class="n">process_iter</span><span class="p">([</span><span class="s1">&#39;name&#39;</span><span class="p">]):</span>
+</span>            <span class="k">if</span> <span class="n">processo</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Após o desempacotamento das constantes e processos, é necessário apenas criar
+uma condicional que se encarregue de verificar se ambos os nomes  de processos
+(chave da constante e nome do processo extraído com <code>psutil</code>) são iguais.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">check_async.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">up_down</span><span class="p">(</span><span class="n">process</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Função responsável por identificar se o processo em palta está em execução.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">process</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">processo</span> <span class="ow">in</span> <span class="n">process_iter</span><span class="p">([</span><span class="s1">&#39;name&#39;</span><span class="p">]):</span>
+<span class="hll">            <span class="k">if</span> <span class="n">processo</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+</span><span class="hll">                <span class="k">return</span> <span class="kc">True</span>
+</span>        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Caso passe na condicional, o script estará em execução,  mas se esse não for o 
+caso, então o mesmo será iniciado pelo <code>subprocess</code> que irá utilizar como 
+parâmetro a variável <code>value</code>para iniciar o processo em análise.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">check_async.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">up_down</span><span class="p">(</span><span class="n">process</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Função responsável por identificar se o processo em palta está em execução.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">process</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">processo</span> <span class="ow">in</span> <span class="n">process_iter</span><span class="p">([</span><span class="s1">&#39;name&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">processo</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+<span class="hll">        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p>Em seguida veremos duas list comprehensions, onde a primeira fará um for em cada
-objeto threading instanciado na variável <code>threads</code> realizando assim um up na
-thread e por sua vez disponibilizando para a pool de processos e a segunda irá
-realizar um join em cada objeto threading, com isso o processo só irá avançar
-quando ambas as threads forem finalizadas. </p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">check_comunicador.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">up</span><span class="p">():</span>
+<p>Em seguida veremos a função <code>main()</code>, que tem como finalidade utilizar a 
+biblioteca AsyncIO para executar a cada 10 segundos duas threads de forma 
+concorrente e após uma análise individual realizar o start do script caso seja
+necessário. </p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">check_async.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Função que executa o script que chama o Comunicador em background e</span>
-<span class="sd">    redireciona sua saídas para /dev/null quando executada através de uma thread</span>
-<span class="sd">    para limitar o consumo de memória.</span>
+<span class="sd">    Função principal que executa as verificações/execuções como concorrências.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">COM</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/usr/bin/nohup /opt/sefaz/cco/bin/runcco-ser.sh &gt; /dev/null 2&gt;&amp;1 &amp;&#39;</span><span class="p">]</span>
-    <span class="n">MON</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/usr/bin/nohup /opt/sefaz/cco/bin/runcco-mon.sh &gt; /dev/null 2&gt;&amp;1 &amp;&#39;</span><span class="p">]</span>
-
-
-    <span class="n">threads</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">run</span><span class="p">(</span><span class="n">COM</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;up&#39;</span><span class="p">),</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">run</span><span class="p">(</span><span class="n">MON</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;up&#39;</span><span class="p">)</span>
-    <span class="p">]</span>
-
-    <span class="p">[</span><span class="n">th</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="k">for</span> <span class="n">th</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">]</span> 
-    <span class="p">[</span><span class="n">th</span><span class="o">.</span><span class="n">join</span><span class="p">()</span> <span class="k">for</span> <span class="n">th</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">]</span>
-</code></pre></div></td></tr></table></div>
-<p>No <code>if __name__ == '__main__'</code> é inserido um loop onde caso o serviço não esteja
-rodando, a função <code>up()</code> será chamada. O siclo se reinicia a cada 10 segundos
-(Isso ocorre visando a queda do serviço na hora da emissão, ou seja, dez
-segundos é tempo suficiente para cair e subir o serviço antes do envio do cupom
-para a SEFAZ). </p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">check_comunicador.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-
-    <span class="c1"># O stdout do check_up(), ou seja, o output do run executado sempre será</span>
-    <span class="c1"># em string, se o comunicador não estiver em execução o run() retornará</span>
-    <span class="c1"># um string vazia, caso contrário o retorno será uma string com o PID do</span>
-    <span class="c1"># processo.</span>
-
-    <span class="c1"># Loop que verifica se o Comunicador está UP</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">check_up</span><span class="p">():</span>
-            <span class="n">up</span><span class="p">()</span>
-
-        <span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
+<span class="hll">        <span class="k">await</span> <span class="n">gather</span><span class="p">(</span>
+</span><span class="hll">            <span class="n">to_thread</span><span class="p">(</span><span class="n">up_down</span><span class="p">,</span> <span class="n">MONITOR</span><span class="p">),</span>
+</span><span class="hll">            <span class="n">to_thread</span><span class="p">(</span><span class="n">up_down</span><span class="p">,</span> <span class="n">COMUNICADOR</span><span class="p">)</span>
+</span><span class="hll">            <span class="p">)</span>
+</span><span class="hll">        <span class="k">await</span> <span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<blockquote>
+<p>Definição dos termos abordados:</p>
+<ul>
+<li><code>async def</code>: expressão utilizada para definir uma função assíncrona.</li>
+<li><code>await</code>: expressão com sentido literal (aguarde). </li>
+<li><code>gather</code>: método que executa tasks de forma concorrente.</li>
+<li><code>to_thread</code>: método que executa uma task em uma thread separada.</li>
+</ul>
+</blockquote>
+<p>No <code>if __name__ == '__main__'</code> é inserido apenas a execução da função assíncrona
+<code>main()</code> através do método <code>run()</code>.</p>
+<blockquote>
+<p>O siclo se reinicia a cada 10 segundos (Isso ocorre visando a queda do serviço 
+na hora da emissão, ou seja, dez segundos é tempo suficiente para cair e subir 
+o serviço antes do envio do cupom para a SEFAZ).</p>
+</blockquote>
 <hr />
 <h2 id="codigo-completo">Código completo</h2>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">check_comunicador.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">check_async.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 3</span>
 <span class="normal"> 4</span>
 <span class="normal"> 5</span>
 <span class="normal"> 6</span>
@@ -821,79 +872,39 @@ para a SEFAZ). </p>
 <span class="normal">32</span>
 <span class="normal">33</span>
 <span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/usr/bin/python3</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/usr/bin/env python3.9</span>
 
-<span class="kn">import</span> <span class="nn">threading</span> <span class="k">as</span> <span class="nn">t</span>
-<span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">PIPE</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span> 
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">from</span> <span class="nn">asyncio</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">sleep</span><span class="p">,</span> <span class="n">gather</span><span class="p">,</span> <span class="n">to_thread</span>
+<span class="kn">from</span> <span class="nn">psutil</span> <span class="kn">import</span> <span class="n">process_iter</span>
+<span class="kn">from</span> <span class="nn">constant</span> <span class="kn">import</span> <span class="n">COMUNICADOR</span><span class="p">,</span> <span class="n">MONITOR</span>
 
 
-<span class="k">def</span> <span class="nf">check_up</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">up_down</span><span class="p">(</span><span class="n">process</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Função simples para coletar e retornar o PID do programa Comunicador.</span>
+<span class="sd">    Função responsável por identificar se o processo em palta está em execução.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">command</span> <span class="o">=</span> <span class="n">run</span><span class="p">([</span><span class="s1">&#39;ps -C Comunicador -o pid|grep -v PID&#39;</span><span class="p">],</span>
-                  <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                  <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span>
-                  <span class="n">universal_newlines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">command</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">process</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">processo</span> <span class="ow">in</span> <span class="n">process_iter</span><span class="p">([</span><span class="s1">&#39;name&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">processo</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">up</span><span class="p">():</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Função que executa o script que chama o Comunicador em background e</span>
-<span class="sd">    redireciona sua saídas para /dev/null quando executada através de uma thread</span>
-<span class="sd">    para limitar o consumo de memória.</span>
+<span class="sd">    Função principal que executa as verificações/execuções como concorrências.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">COM</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/usr/bin/nohup /opt/sefaz/cco/bin/runcco-ser.sh &gt; /dev/null 2&gt;&amp;1 &amp;&#39;</span><span class="p">]</span>
-    <span class="n">MON</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/usr/bin/nohup /opt/sefaz/cco/bin/runcco-mon.sh &gt; /dev/null 2&gt;&amp;1 &amp;&#39;</span><span class="p">]</span>
-
-
-    <span class="n">threads</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">run</span><span class="p">(</span><span class="n">COM</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;up&#39;</span><span class="p">),</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">run</span><span class="p">(</span><span class="n">MON</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;up&#39;</span><span class="p">)</span>
-    <span class="p">]</span>
-
-    <span class="p">[</span><span class="n">th</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="k">for</span> <span class="n">th</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">]</span> 
-    <span class="p">[</span><span class="n">th</span><span class="o">.</span><span class="n">join</span><span class="p">()</span> <span class="k">for</span> <span class="n">th</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">]</span>
-
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">await</span> <span class="n">gather</span><span class="p">(</span>
+            <span class="n">to_thread</span><span class="p">(</span><span class="n">up_down</span><span class="p">,</span> <span class="n">MONITOR</span><span class="p">),</span>
+            <span class="n">to_thread</span><span class="p">(</span><span class="n">up_down</span><span class="p">,</span> <span class="n">COMUNICADOR</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">await</span> <span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-
-    <span class="c1"># O stdout do check_up(), ou seja, o output do run executado sempre será</span>
-    <span class="c1"># em string, se o comunicador não estiver em execução o run() retornará</span>
-    <span class="c1"># um string vazia, caso contrário o retorno será uma string com o PID do</span>
-    <span class="c1"># processo.</span>
-
-    <span class="c1"># Loop que verifica se o Comunicador está UP</span>
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">check_up</span><span class="p">():</span>
-            <span class="n">up</span><span class="p">()</span>
-
-        <span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div></td></tr></table></div>
 
   <hr>
@@ -905,7 +916,7 @@ para a SEFAZ). </p>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 17, 2023</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 18, 2023</span>
       
     
   </small>
@@ -940,7 +951,7 @@ para a SEFAZ). </p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" hidden>
         
           
-          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: HOME" rel="prev">
+          <a href="../check_comunicador/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Check Comunicador" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -949,20 +960,20 @@ para a SEFAZ). </p>
                 <span class="md-footer__direction">
                   Previous
                 </span>
-                HOME
+                Check Comunicador
               </div>
             </div>
           </a>
         
         
           
-          <a href="../check_async/" class="md-footer__link md-footer__link--next" aria-label="Next: Check Async" rel="next">
+          <a href="../../blog/" class="md-footer__link md-footer__link--next" aria-label="Next: Blog" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-                Check Async
+                Blog
               </div>
             </div>
             <div class="md-footer__button md-icon">
