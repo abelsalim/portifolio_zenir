@@ -61,14 +61,38 @@ extra:
 
 
 plugins:
+  - blogging:
+      # GLOBAL CATEGORY: configs for {{ blog_content }}
+      dirs:
+        - blog
+      template: override/custom-blog.html
+
+      # INDIVIDUAL CATEGORIES: configs for {{ blog_content name }}
+      categories:
+        - name: reviews
+          dirs:
+            - reviews
+   
+      # GLOBAL CONFIG: configs apply to all categories
+      time_format: '%d/%m/%y %H:%M:%S'
+      meta_time_format: '%Y-%m-%d %H:%M:%S'
+      features:
+        tags:
+          index_page: tags.md
+          insert: top
   - search                        # Habilitando a barra de pesquisa no cabeçalho
   - git-revision-date-localized:
       enable_creation_date: true  # Inserção do time de edição no final da nota
 
+
 nav:                         # Estrutura de páginas
   - HOME: index.md
   - Scripts Python:
-    - Check Comunicador: scripts_python/check_comunicador.md  
+    - Check Comunicador: scripts_python/check_comunicador.md
+  - Blog:
+    - blog/index.md
+    - 2023:
+      - blog/posts/funcoes_python.md
 
 
 markdown_extensions:
