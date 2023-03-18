@@ -25,8 +25,7 @@ ___
 ## Estatísticas do GitHub
 
 <div align="center">  
-  <img width="70%" height="350px" src="https://github-readme-stats.vercel.app/api?username=abelsalim&show_icons=true&theme=tokyonight&include_all_commits=true&
-  count_private=true" /> 
+  <img width="70%" height="350px" src="https://github-readme-stats.vercel.app/api?username=abelsalim&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true" /> 
 </div>
 
 <div align="center" style="display: inline_block"><br>
