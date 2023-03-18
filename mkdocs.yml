@@ -30,6 +30,8 @@ theme:                       # Informações de themas e customizações
 
     - navigation.footer      # Habilita edição do rodapé
 
+    - content.code.copy      # Habilitar botão copia e cola
+
   palette:                   # Informações de themas (dark/white)
     - media: "(prefers-color-scheme: light)"
       scheme: default 
@@ -89,6 +91,7 @@ nav:                         # Estrutura de páginas
   - HOME: index.md
   - Scripts Python:
     - Check Comunicador: scripts_python/check_comunicador.md
+    - Check Async: scripts_python/check_async.md
   - Blog:
     - blog/index.md
     - 2023:
@@ -103,3 +106,5 @@ markdown_extensions:
   - pymdownx.tilde       # Suporte a tachado
   - pymdownx.highlight   # Suporte a código
   - pymdownx.superfences # Suporte a tipagem
+  - attr_list            # Suporte para imagens
+  - md_in_html           # Suporte para imagens
