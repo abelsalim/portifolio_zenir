@@ -30,7 +30,7 @@ Zorin 14.04 e 16.04).
 
 > Nesse artigo trataremos do script adaptado como __Solução para o python3.6__.
 
-A solução abordada foi o srcipt `check_comunicador.py`, que basicamente utiliza
+A solução abordada foi o script `check_comunicador.py`, que basicamente utiliza
 bibliotecas como threading, subprocess e time:
 
 * __Threading:__ Utilizar threads possibilitou o a criação de treads para então
@@ -54,7 +54,7 @@ ___
 
 ## Análise por trecho de código
 
-De início temos a função `check_up()`que como o nome sugere, verifica se o
+De início temos a função `check_up()` que como o nome sugere, verifica se o
 script está up e retorna ou não o seu PID (Número do processo UNIX), caso o
 serviço não esteja up o retorno é uma string vazia.
 
@@ -120,7 +120,7 @@ def up():
     [th.join() for th in threads]
 ```
 
-no `if __name__ == '__main__'` é inserido um loop onde caso o serviço não esteja
+No `if __name__ == '__main__'` é inserido um loop onde caso o serviço não esteja
 rodando, a função `up()` será chamada. O siclo se reinicia a cada 10 segundos
 (Isso ocorre visando a queda do serviço na hora da emissão, ou seja, dez
 segundos é tempo suficiente para cair e subir o serviço antes do envio do cupom
