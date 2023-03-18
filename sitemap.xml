@@ -2,12 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://abelsalim.github.io/portifolio_zenir/</loc>
-         <lastmod>2023-03-17</lastmod>
+         <lastmod>2023-03-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://abelsalim.github.io/portifolio_zenir/blog/</loc>
+         <lastmod>2023-03-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://abelsalim.github.io/portifolio_zenir/blog/posts/funcoes_python/</loc>
+         <lastmod>2023-03-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://abelsalim.github.io/portifolio_zenir/blog/posts/list_comprehension/</loc>
+         <lastmod>2023-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://abelsalim.github.io/portifolio_zenir/scripts_python/check_comunicador/</loc>
-         <lastmod>2023-03-17</lastmod>
+         <lastmod>2023-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
