@@ -1,46 +1,68 @@
 ---
+exclude_from_blog: true
 hide:
   - footer
 ---
 
-# Welcome to MkDocs
+# Olá... Bem vindo ao meu Portfólio
+___
+<div>
+  <img align="left" height="310" width="320" src="img/self.png" >
+  <p>
+    Meu nome é Abel Salim, tenho 23 anos e sou amante de tecnologia. Tenho mais
+    afinidade com ferramentas linux como as variáveis distros (Ubuntu, Debian,
+    Archlinux, Manjaro, EndeavourOS e Gentoo), Raspberry e Shell Script.
+    Ferramentas de versionamento de códigos (git e github) também se encontram
+    nesse leque de conhecimentos já adquiridos. Entretanto, esse portfólio tem
+    como objetivo acompanhar minha caminhada 'Rumo ao DEV', onde vou estar
+    compartilhando minha caminhada e aprendizado em áreas de programação python,
+    contribuições em bibliotecas e outras ferramentas como banco de dados.
+  </p>
+</div>
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+___
 
-## Commands
+## Estatísticas do GitHub
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+<div align="center">  
+  <img width="70%" height="350px" src="https://github-readme-stats.vercel.app/api?username=abelsalim&show_icons=true&theme=tokyonight&include_all_commits=true&
+  count_private=true" /> 
+</div>
 
-## Project layout
+<div align="center" style="display: inline_block"><br>
+  <!-- Linguagens -->
+  <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
+  <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" />
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+  <!-- Sistema UNIX -->
+  <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg" />
+  <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/debian/debian-original.svg" />
+  <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" />
+  <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gentoo/gentoo-plain.svg" />
+  <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" />
 
-- w
-- w
+  <!-- Ferramentas de versionamento -->  
+  <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
+  <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 
-1. dsd
-2. fasd
+  <!-- Banco de dados -->
+  <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" />
+  <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
 
-- [ ] adfkasfafaf
-- [ ] adfkasfafaf
-- [x] adfkasfafaf
+  <!-- Ferramentas -->
+  <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vim/vim-original.svg" />
+  <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />
+  <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" />
+</div>
 
-[Google](https://www.google.com)
+<br>
+<br>
 
-> jdsdjd
+## Últimos posts
+{{ blog_content }}
 
-jssjcsncjscnsc :snake:
+## Principais Repositórios
 
-|jajaja |kakaka |
-|:-----:|:-----:|
-|adaskas|oskdaad|
-
-~~tachado~~
-
-==marcado==
+<a href="https://github.com/abelsalim/sathub">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=abelsalim&repo=sathub&theme=tokyonight" />
+</a>
