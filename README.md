@@ -7,7 +7,7 @@ hide:
 # Olá... Bem vindo ao meu Portfólio
 ___
 <div>
-  <img align="left" height="310" width="320" src="img/self.png" >
+  <img align="left" height="310" width="320" src="docs/img/self.png" >
   <p>
     Meu nome é Abel Salim, tenho 23 anos e sou amante de tecnologia. Tenho mais
     afinidade com ferramentas linux como as variáveis distros (Ubuntu, Debian,
@@ -25,7 +25,7 @@ ___
 ## Estatísticas do GitHub
 
 <div align="center">  
-  <img width="70%" height="350px" src="https://github-readme-stats.vercel.app/api?username=abelsalim&show_icons=true&theme=tokyonight&include_all_commits=true&
+  <img width="60%" height="350px" src="https://github-readme-stats.vercel.app/api?username=abelsalim&show_icons=true&theme=tokyonight&include_all_commits=true&
   count_private=true" /> 
 </div>
 
